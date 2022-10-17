@@ -68,8 +68,9 @@ align-items: center;
 
 input{
   background-color: burlywood;
-  padding: 0.8em 2.0em;
+  padding: 0.8em 2%;
   text-transform: capitalize;
+  width: min-content;
 }
 
 .button-city {
