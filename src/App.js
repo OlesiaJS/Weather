@@ -4,7 +4,7 @@ import { WiHumidity } from "react-icons/wi";
 import { FaTemperatureLow } from "react-icons/fa";
 import GetSvgCondition from "./components/Condition";
 
-// import axios from "axios";
+import axios from "axios";
 
 
 
@@ -27,39 +27,39 @@ function App() {
         setCondition(data.current.condition.text);
         setCountry(data.location.country);
         setError(false);
-        // GetPhoto();
+        GetPhoto();
       })
       .catch(error => setError(true));
   };
 
 
-  // async function GetPhoto() {
-  //   const city_state = inputLocationName;
-  //   const ApiKey = 'AIzaSyBIhFd5eMzeNnx1ziS1KQJ7qqPtEaty53g';
-  //   const proxyUrl = "https://my-cors-anywhere-deployment/";
-  //   const placesRequestUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city_state}&key=${ApiKey}&inputtype=textquery&fields=name,photos`;
-  //   console.log('ehfff');
-  //   const initialPlacesRequest = await axios
-  //     .get(placesRequestUrl, {
-  //       headers: {
-  //         'Access-Control-Allow-Origin': '*',
-  //       },
-  //       proxy: {
-  //         host: '104.236.174.88',
-  //         port: 3128
-  //       }
-  //     });
-  //   // .catch(console.error);
-  //   const photoRef = initialPlacesRequest?.data?.candidates?.[0]?.photos?.[0]?.photo_reference;
-  //   console.log(photoRef);
-  //   if (photoRef) {
-  //     const imageLookupURL = `https://maps.googleapis.com/maps/api/place/photo?photoreference=${photoRef}&key=${ApiKey}&maxwidth=700&maxheight=700`;
-  //     const imageURLQuery = await fetch(proxyUrl + imageLookupURL)
-  //       .then(r => r.blob());
-  //     // .catch(console.error);
-  //     imageUrl = URL.createObjectURL(imageURLQuery); //declared earlier
-  //   }
-  // }
+  async function GetPhoto() {
+    const city_state = inputLocationName;
+    const ApiKey = 'AIzaSyBIhFd5eMzeNnx1ziS1KQJ7qqPtEaty53g';
+    const proxyUrl = "https://my-cors-anywhere-deployment/";
+    const placesRequestUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city_state}&key=${ApiKey}&inputtype=textquery&fields=name,photos`;
+    const initialPlacesRequest = await axios
+      .get(proxyUrl + placesRequestUrl, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        proxy: {
+          host: '104.236.174.88',
+          port: 3128
+        }
+      }
+      );
+    // .catch(console.error);
+    const photoRef = initialPlacesRequest?.data?.candidates?.[0]?.photos?.[0]?.photo_reference;
+    console.log(photoRef);
+    if (photoRef) {
+      const imageLookupURL = `https://maps.googleapis.com/maps/api/place/photo?photoreference=${photoRef}&key=${ApiKey}&maxwidth=700&maxheight=700`;
+      const imageURLQuery = await fetch(proxyUrl + imageLookupURL)
+        .then(r => r.blob());
+      // .catch(console.error);
+      imageUrl = URL.createObjectURL(imageURLQuery); //declared earlier
+    }
+  }
 
 
   return (
