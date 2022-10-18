@@ -1,0 +1,71 @@
+.App-header {
+    margin: 20px 0;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.wrapper {
+    border-radius: 3%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 500px;
+    background-color: rgb(100, 94, 104);
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    min-height: 100vh;
+}
+
+.wrapper-all-condition {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.condition-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comparison-card-image {
+    display: block;
+    margin: auto 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+input {
+    background-color: burlywood;
+    padding: 0.8em 2%;
+    text-transform: capitalize;
+    width: min-content;
+}
+
+.button-city {
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    padding: 0.8em 2.0em;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: #dbac34;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #db9b34 inset, 0 0 0 0 #dbc534;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+
+}
+
+.button-city:hover {
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 10px 0 #db9b34 inset, 0 0 10px 4px #dbc534;
+}

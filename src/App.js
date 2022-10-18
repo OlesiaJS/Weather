@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './index.css';
+import "../src/components/style.css";
 import { WiHumidity } from "react-icons/wi";
 import { FaTemperatureLow } from "react-icons/fa";
 import GetSvgCondition from "./components/Condition";
@@ -13,12 +13,12 @@ function App() {
   const [tepmerature, setTepmerature] = useState('');
   const [condition, setCondition] = useState('');
   const [country, setCountry] = useState('');
-  const [inputLocationName, setInputLocationName] = useState('Dnepropetrovsk');
+  const [inputLocationName, setInputLocationName] = useState('Chernivtsi');
   const [error, setError] = useState(false);
   let imageUrl = '';
   console.log(condition);
   const updateWeather = () => {
-    fetch('https:api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
+    fetch('https://api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
       .then(el => el.json())
       .then(data => {
         setInputLocationName(data.location.name);
@@ -32,24 +32,6 @@ function App() {
       .catch(error => setError(true));
   };
 
-
-  // const GetPhoto = () => {
-  //   const city_state = inputLocationName;
-  //   const ApiKey = 'AIzaSyBIhFd5eMzeNnx1ziS1KQJ7qqPtEaty53g';
-  //   let headers = new Headers();
-  //   headers.append('Content-Type', 'application/json');
-  //   headers.append('Accept', 'application/json');
-  //   headers.append('Origin', 'http://localhost:3000');
-  //   fetch(`http://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city_state}&key=${ApiKey}&inputtype=textquery&fields=name,photos`, {
-  //     mode: 'cors',
-  //     credentials: 'include',
-  //     method: 'POST',
-  //     headers: headers
-  //   })
-  //     .then(response => response.text())
-  //     .then(result => console.log(result))
-  //     .catch(error => console.log('error', error));
-  // };
 
   // async function GetPhoto() {
   //   const city_state = inputLocationName;
