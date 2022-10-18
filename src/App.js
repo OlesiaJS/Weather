@@ -36,7 +36,7 @@ function App() {
   async function GetPhoto() {
     const city_state = inputLocationName;
     const ApiKey = 'AIzaSyBIhFd5eMzeNnx1ziS1KQJ7qqPtEaty53g';
-    const proxyUrl = "https://my-cors-anywhere-deployment/";
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const placesRequestUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city_state}&key=${ApiKey}&inputtype=textquery&fields=name,photos`;
     const initialPlacesRequest = await axios
       .get(proxyUrl + placesRequestUrl, {
