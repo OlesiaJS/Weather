@@ -1,71 +1,158 @@
-.App-header {
-    margin: 20px 0;
-    font-size: 30px;
-    text-transform: capitalize;
-}
-
-.wrapper {
-    border-radius: 3%;
-    display: block;
-    margin: 0 auto;
+header {
+    text-transform: uppercase;
+    color: darkcyan;
     text-align: center;
-    max-width: 500px;
-    background-color: rgb(100, 94, 104);
-    padding: 20px;
-    color: white;
-    font-size: 20px;
-    min-height: 100vh;
+    height: min-content;
+    padding: 10px;
 }
 
-.wrapper-all-condition {
-    padding: 20px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
-.condition-item {
+.weather-search {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background-image: url('..//imgSvg/heroBg.png');
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    width: 100%;
+    align-items: center;
+    height: 426px;
+}
+
+.search-field {
+    max-width: 600px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.comparison-card-image {
-    display: block;
-    margin: auto 0;
-    width: 100%;
-    min-height: 200px;
-    background-position: center center;
+.search-field-input {
+    padding-left: 15px;
+    border-radius: 30px;
+    border:none;
+    height: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: text;
+}
+
+.search-field-button {
+    background: #90CAF9;
+    background-image: url('..//imgSvg/Vector.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    background-position: center;
+    border-radius: 30px;
+    border: 0;
+    width: 50px;
+    height: 50px;
+} 
+
+.weather-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 550px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    padding: 20px;
+align-items: center;
+
 }
 
-input {
-    background-color: burlywood;
-    padding: 0.8em 2%;
-    text-transform: capitalize;
-    width: min-content;
+
+.weather-info-temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+
+}
+.weather-info-icon {
+    background: #FFFFFF;
+    border-radius: 30px;
+    height: 100px;
+    width: 100px;
+}
+.weather-icon-img {
+    width: 100px;
+    height: 100px;
 }
 
-.button-city {
-    background-color: transparent;
-    border-radius: 0.6em;
-    cursor: pointer;
-    padding: 0.8em 2.0em;
+.weather-info-temp-current {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.drizzle-type {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #212121;
+}
+
+.weather-info-location {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 20px;
+}
+
+.popular-cities-section {
+    background-color: aliceblue;
+    padding: 20px;
     text-align: center;
-    text-transform: uppercase;
-    border-color: #dbac34;
-    color: #fff;
-    box-shadow: 0 0 40px 40px #db9b34 inset, 0 0 0 0 #dbc534;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
-
+}
+.popular-cities-section h2{
+    padding-bottom: 30px;
 }
 
-.button-city:hover {
-    color: #fff;
-    outline: 0;
-    box-shadow: 0 0 10px 0 #db9b34 inset, 0 0 10px 4px #dbc534;
+.popular-cities-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popular-cities{
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    }
+
+.NewYork {
+    background-image: url(../imgSvg/NewYork.png);
+}
+.London {
+    background-image: url(../imgSvg/London.png);
+}
+.Dubai {
+    background-image: url(../imgSvg/Dubai.png);
+}
+.Paris {
+    background-image: url(../imgSvg/Dubai.png);
+}
+
+
+.button-cities {
+    width: 80%;
+    padding: 5px;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    color: #212121;
+    font-size: 16px;
 }
